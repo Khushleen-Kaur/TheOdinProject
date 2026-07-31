@@ -4,21 +4,27 @@
 }
 body{
     background-color: rgb(255, 255, 193);
+    background-image: linear-gradient(to bottom, #9c6e4e,  #a57753, #d8a975);
 }
 header{
     display: flex;
     justify-content: center;
-    background-color: rgb(123, 123, 8);
+    position: sticky;
+    top: 0;
+    background-color: #926448;
     font-size: 1.3rem;
     color: rgb(245, 255, 218);
     font-weight: 800;
     padding: 20px;
+    border-bottom: 2px solid #7e5236;
 }
+
+/* Dialog box styling */
 #my-dialog{
     margin: auto;
     position: relative;
-    background-color: rgb(255, 255, 193);
-    border: 2px solid rgb(123, 123, 8);
+    background-color: #e3b47c;
+    border: 2px solid #9c6e4e;
     border-radius: 20px;
 }
 #dialogCloseButton{
@@ -31,16 +37,22 @@ header{
     display: flex;
     justify-content: center;
     padding: 10px;
-    color: rgb(93, 93, 0);
+    color: #4c1d00;
+}
+.data{
+    padding: 3px;
+    margin-left: 20px;
+    color: #fff2ea;
 }
 label{
-    color: rgb(55, 55, 9);
+    color: #000000;
     padding: 0px 10px;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
 input{
     background-color: rgb(255, 255, 239);
-    border: 2px solid rgb(123, 123, 8);
+    border: 2px solid #9c6e4e;
+    color: #4c1d00;
     padding: 10px;
     font-size: 1.1rem;
     border-radius: 20px;
@@ -50,8 +62,7 @@ input{
 
 }
 #addBook{
-    position: absolute;
-    bottom: 50px;
+    margin-bottom: 50px;
     display: flex;
     justify-self: center;
 
@@ -64,29 +75,122 @@ input{
 #dialogCloseButton{
     margin: 5px;
 }
-#addBook, #submitForm, #dialogCloseButton{
+.removeBook{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+#addBook, #submitForm, #dialogCloseButton, .bookBox > .unread, .removeBook{
     padding: 10px;
-    border: 2px solid rgb(123, 123, 8);
-    background-image: linear-gradient(to bottom, rgb(200, 200, 0), rgb(0, 0, 0));
+    border: 2px solid #976540;
+    background-image: linear-gradient(to bottom, #e3b47c, #926448);
     border-radius: 10px;
-    color: white;
+    color: #fff2ea;
     font-weight: 600;
 }
-#addBook:hover, #submitForm:hover, #dialogCloseButton:hover{
+#addBook:hover, #submitForm:hover, #dialogCloseButton:hover, .bookBox > .unread:hover, .removeBook:hover{
     /* transform: scale(1.05); */
     padding: 10px;
-    border: 2px solid rgb(123, 123, 8);
-    background-image: linear-gradient(to bottom,rgb(0, 0, 0),  rgb(200, 200, 0));
+    border: 2px solid #976540;
+    background-image: linear-gradient(to bottom,#926448,  #e3b47c);
     cursor: pointer;
 }
 
+/* Book Box Styling */
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    min-height: 80vh;
+    overflow-y: auto;
+}
+.bookBox{
+    background-image: linear-gradient(to top,#b08968, #9c6644);
+    min-height: 60vh;
+    border: 2px solid #7f5539;
+    width: 20vw;
+    border-radius: 20px;
+    margin: 20px;
+    
+}
+
+.bookBox > img{
+    display: flex;
+    justify-self: center;
+    width: 10vw;
+    margin: 10px;
+    border: 1px solid black;
+}
+.bookBox > .unread{
+    display: flex;
+    justify-self: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+@media screen and (max-width: 784px) {
+    .removeBook{
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+    .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        
+    }
+    .data{
+        padding: 3px;
+    }
+    .bookBox{
+        padding: 10px;
+        min-height: 10vh;
+        width: 40vw;
+        margin: 20px;
+    }
+    .bookBox > img{
+        display: flex;
+        justify-self: center;
+        width: 35vw;
+    }
+    
+}
+@media screen and (max-width: 460px) {
+    .removeBook{
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .data{
+        padding: 3px;
+    }
+    .bookBox{
+        padding: 10px;
+        min-height: 10vh;
+        width: 70vw;
+        margin: 20px;
+        box-sizing: border-box;
+    }
+    .bookBox > img{
+        display: flex;
+        justify-self: center;
+        width: 60vw;
+    }
+    
+}
 footer{
     position: fixed;
     width: 100%;
     bottom: 0px;
     display: flex;
     justify-content: center;
-    background-color: rgb(123, 123, 8);
+    background-color: #9c6e4e;
     font-size: 1rem;
     color: rgb(245, 255, 218);
     font-weight: 400;
