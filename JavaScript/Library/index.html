@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,42 +7,44 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-    <header>
-        <img src="" alt="">
+<body class="body darkContainer">
+    <button class="mode darkModeButton">
+        <div class="ball darkMode"></div>
+    </button>
+    <header class="head darkHead">
         <div class="head">Khushleen's Library</div>
     </header>
     <main>
         <div class="container"></div>
         <div class="buttons">
-            <button id="addBook" command="show-modal" commandfor="my-dialog">Add Book</button>
+            <button id="addBook" command="show-modal" commandfor="my-dialog" class="button darkButton">Add Book</button>
             
-            <dialog id="my-dialog">
-                <button commandfor="my-dialog" command="close" id="dialogCloseButton">X</button>
-                <h1>Book Details:</h1>
+            <dialog id="my-dialog" class="darkDialog">
+                <button commandfor="my-dialog" command="close" id="dialogCloseButton" class="button darkButton">X</button>
+                <h1 class="heading darkHeading">Book Details:</h1>
                 <form action="" id="myForm">
-                    <div class="formData">
+                    <div class="formData darkFormData">
                         <label for="title">Enter Title: </label>
                         <input type="text" id="title">
                     </div>
-                    <div class="formData">
+                    <div class="formData darkFormData">
                         <label for="author">Enter Author name: </label>
                         <input type="text" id="author">
                     </div>
-                    <div class="formData">
+                    <div class="formData darkFormData">
                         <label for="pages">Enter Number of Pages: </label>
                         <input type="number" id="pages">
                     </div>
-                    <div class="formData">
+                    <div class="formData darkFormData">
                         <label for="coverUrl">Enter Cover Page URL: </label>
                         <input type="text" id="coverUrl">
                     </div>
-                    <input id="submitForm" type="submit">
+                    <input id="submitForm" type="submit" class="button darkButton">
                 </form>
             </dialog>
         </div>
     </main>
-    <footer>
+    <footer class="footer darkFooter">
         Thanks for visiting
     </footer>
     <!-- <button>↑</button> -->

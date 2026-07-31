@@ -13,19 +13,37 @@ class Book{
 }
 function addBookToLibrary(book) {
     let container = document.querySelector(".container");
-    let html = `
-        <div class="bookBox" id="${book.BookNumber}">
-        <button class="removeBook">X</button>
-            <img src="${book.coverUrl}" alt="Book Cover">
-            <div class="info">
-                <div class="data"><strong>Title</strong> : ${book.title}</div>
-                <div class="data"><strong>Author</strong> : ${book.author}</div>
-                <div class="data"><strong>Number of Pages</strong> : ${book.pages}</div>
-                <div class="data"><strong>Book Id</strong> : ${book.id}</div>
+    let html = "";
+    console.log(document.querySelector('.ball').classList.contains('darkMode'));
+    if(document.querySelector('.ball').classList.contains('darkMode')){
+        html = `
+            <div class="bookBox darkBookBox" id="${book.BookNumber}">
+            <button class="removeBook button darkButton">X</button>
+                <img src="${book.coverUrl}" alt="Book Cover">
+                <div class="info">
+                    <div class="data darkData"><strong>Title</strong> : ${book.title}</div>
+                    <div class="data darkData"><strong>Author</strong> : ${book.author}</div>
+                    <div class="data darkData"><strong>Number of Pages</strong> : ${book.pages}</div>
+                    <div class="data darkData"><strong>Book Id</strong> : ${book.id}</div>
+                </div>
+                <button class="unread button darkButton" >Unread</button>
             </div>
-            <button class="unread">Unread</button>
-        </div>
-    `;
+        `;
+    }else{
+        html = `
+            <div class="bookBox" id="${book.BookNumber}">
+            <button class="removeBook button">X</button>
+                <img src="${book.coverUrl}" alt="Book Cover">
+                <div class="info">
+                    <div class="data"><strong>Title</strong> : ${book.title}</div>
+                    <div class="data"><strong>Author</strong> : ${book.author}</div>
+                    <div class="data"><strong>Number of Pages</strong> : ${book.pages}</div>
+                    <div class="data"><strong>Book Id</strong> : ${book.id}</div>
+                </div>
+                <button class="unread button" >Unread</button>
+            </div>
+        `;
+    }
     
     container.insertAdjacentHTML('beforeend', html);
     
@@ -99,3 +117,27 @@ addBookToLibrary(myLibrary[0]);
 addBookToLibrary(myLibrary[1]);
 addBookToLibrary(myLibrary[2]);
 addBookToLibrary(myLibrary[3]);
+
+
+document.querySelector('.mode').addEventListener("click", (()=> {
+    console.log(document.querySelector('.ball').classList.toggle('darkMode'));
+    document.querySelector('.head').classList.toggle('darkHead');
+    document.querySelector('.body').classList.toggle('darkContainer');
+    document.querySelector('.footer').classList.toggle('darkFooter');
+    document.querySelector('#my-dialog').classList.toggle('darkDialog');
+    document.querySelector('.heading').classList.toggle('darkHeading');
+    document.querySelector('.mode').classList.toggle('darkModeButton');
+    let buttons = document.querySelectorAll('.button');
+    buttons.forEach(element => {
+        element.classList.toggle('darkButton');
+    });
+    let cards = document.querySelectorAll('.bookBox');
+    cards.forEach(element => {
+        element.classList.toggle('darkBookBox');
+    });
+    let formData = document.querySelectorAll('.formData');
+    formData.forEach(element => {
+        element.classList.toggle('darkFormData');
+    });
+
+}))

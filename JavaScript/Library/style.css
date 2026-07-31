@@ -33,7 +33,7 @@ header{
     top: 0px;
     
 }
-#my-dialog h1{
+h1{
     display: flex;
     justify-content: center;
     padding: 10px;
@@ -79,7 +79,7 @@ input{
     margin-top: 10px;
     margin-left: 10px;
 }
-#addBook, #submitForm, #dialogCloseButton, .bookBox > .unread, .removeBook{
+.button{
     padding: 10px;
     border: 2px solid #976540;
     background-image: linear-gradient(to bottom, #e3b47c, #926448);
@@ -87,7 +87,7 @@ input{
     color: #fff2ea;
     font-weight: 600;
 }
-#addBook:hover, #submitForm:hover, #dialogCloseButton:hover, .bookBox > .unread:hover, .removeBook:hover{
+.button:hover{
     /* transform: scale(1.05); */
     padding: 10px;
     border: 2px solid #976540;
@@ -203,4 +203,118 @@ footer{
     font-weight: 400;
     padding: 5px;
 
+}
+
+
+/* ---- For Dark Theme ---- */
+.mode{
+    z-index: 2;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    border-radius: 20px;
+    min-width: 70px;
+    min-height: 35px;
+    background-color: #ccbab2;
+}
+
+.darkModeButton{
+    background-color: #ffe3d0;
+}
+.mode{
+    background-color: #ffede4;
+}
+
+.ball{
+    z-index: 2;
+    position: fixed;
+    top: 12px;
+    right: 13px;
+    background-color: #7f5539;
+    padding: 10px;
+    border-radius: 20px;
+    min-width: 11px;
+    min-height: 11px;
+    animation: changeModeToLight 2s cubic-bezier(0.22, 0.74, 0.73, 0.34) alternate;
+}
+.darkMode{
+    animation: changeModeToDark 2s cubic-bezier(0.22, 0.74, 0.73, 0.34) alternate;
+    right: 45px;
+    background-color: #251c17;
+
+}
+
+@keyframes changeModeToDark {
+    0%{
+        right: 10px;
+        background-color: #C4A484 ;
+    }
+    20%{
+        right: 45px;
+        background-color: #251c17;
+    }
+}
+@keyframes changeModeToLight {
+    0%{
+        right: 45px;
+        background-color: #251c17;
+    }
+    20%{
+        right: 10px;
+        background-color: #fff2e4 ;
+    }
+}
+.darkHead{
+    background-color: #251c17;
+    color: #ccbab2;
+}
+.darkContainer{
+    background-image: linear-gradient(to bottom, #251c17,  #31251f, #734f38);   
+}
+.darkDialog{
+    background-image: linear-gradient(to bottom, #260701,  #532c1e);   
+    color: #edc4b3;
+}
+.darkHeading , .darkFormData > label {
+    color: #edc4b3;
+}
+.darkFormData > input {
+    border: 2px solid #edc4b3;
+    color: #edc4b3;
+    background-color: #260701;
+}
+.darkFooter{
+    background-color: #251c17;
+    color: #ccbab2;
+}
+.darkButton{
+    border: 2px solid #633c0b;
+    background-image: linear-gradient(to bottom, #8b5e34, #583101);
+    color: #fff2ea;
+}
+.darkButton:hover{
+    /* transform: scale(1.05); */
+    border: 2px solid #714a19;
+    background-image: linear-gradient(to top, #8b5e34, #583101);
+}
+.darkBookBox{
+    background-image: linear-gradient(to bottom, #735647,  #31251f);   
+    color: #deab90;
+    
+}
+
+/* ScrollBar modification */
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: #523726 ;
+}
+::-webkit-scrollbar-thumb {
+  background: #d4af96;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ebcfbc;
 }
