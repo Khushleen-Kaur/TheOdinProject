@@ -109,6 +109,7 @@ input{
     min-height: 60vh;
     border: 2px solid #7f5539;
     width: 20vw;
+    width: 20vw;
     border-radius: 20px;
     margin: 20px;
     
@@ -127,7 +128,7 @@ input{
     margin-top: 20px;
     margin-bottom: 10px;
 }
-@media screen and (max-width: 784px) {
+@media screen and (max-width: 900px) {
     .removeBook{
         margin-top: 0px;
         margin-left: 0px;
@@ -183,6 +184,12 @@ input{
         width: 60vw;
     }
     
+}
+.noBook{
+    color: rgb(245, 255, 218);
+    display: flex;
+    justify-content: center;
+    margin-top: 20vh;
 }
 footer{
     position: fixed;

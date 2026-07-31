@@ -40,8 +40,27 @@ function addBookToLibrary(book) {
     let removeArray = document.querySelectorAll(".removeBook");
     removeArray[removeArray.length - 1].addEventListener("click" , (() => {
         removeArray[removeArray.length - 1].parentElement.outerHTML = "";
-        myLibrary[removeArray[removeArray.length - 1].parentElement.getAttribute('id') - 1];
-        alert("Book removed from Library Successfully!")
+        let index = removeArray[removeArray.length - 1].parentElement.getAttribute('id') - 1;
+        console.log(index);
+        console.log(removeArray);
+        myLibrary.splice(index, 1);
+        let boxes = document.querySelectorAll(".bookBox");
+        for (let i = 0; i < myLibrary.length; i++) {
+            if(i >= index){
+                boxes[i].setAttribute('id', i+1);
+            }
+            if(i >= index){
+                myLibrary[i].BookNumber -= 1;                
+            }
+        }
+
+        alert("Book removed from Library Successfully!");
+        console.log(myLibrary);
+        if(myLibrary.length == 0){
+            document.querySelector(".container").innerHTML = `
+            <h1 class="noBook">Nothing on the shelf...</h1>
+            `
+        }
     }));
         
 
