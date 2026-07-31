@@ -14,8 +14,71 @@ header{
     font-weight: 800;
     padding: 20px;
 }
+#my-dialog{
+    margin: auto;
+    position: relative;
+    background-color: rgb(255, 255, 193);
+    border: 2px solid rgb(123, 123, 8);
+    border-radius: 20px;
+}
+#dialogCloseButton{
+    position: absolute;
+    right: 0;
+    top: 0px;
+    
+}
+#my-dialog h1{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    color: rgb(93, 93, 0);
+}
+label{
+    color: rgb(55, 55, 9);
+    padding: 0px 10px;
+    font-size: 1.2rem;
+}
+input{
+    background-color: rgb(255, 255, 239);
+    border: 2px solid rgb(123, 123, 8);
+    padding: 10px;
+    font-size: 1.1rem;
+    border-radius: 20px;
+}
+.formData{
+    padding: 15px;
 
+}
+#addBook{
+    position: absolute;
+    bottom: 50px;
+    display: flex;
+    justify-self: center;
 
+}
+#submitForm{
+    display: flex;
+    justify-self: center;
+    margin: 20px;
+}
+#dialogCloseButton{
+    margin: 5px;
+}
+#addBook, #submitForm, #dialogCloseButton{
+    padding: 10px;
+    border: 2px solid rgb(123, 123, 8);
+    background-image: linear-gradient(to bottom, rgb(200, 200, 0), rgb(0, 0, 0));
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+}
+#addBook:hover, #submitForm:hover, #dialogCloseButton:hover{
+    /* transform: scale(1.05); */
+    padding: 10px;
+    border: 2px solid rgb(123, 123, 8);
+    background-image: linear-gradient(to bottom,rgb(0, 0, 0),  rgb(200, 200, 0));
+    cursor: pointer;
+}
 
 footer{
     position: fixed;
